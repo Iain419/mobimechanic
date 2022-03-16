@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an account here!!</title>
+</head>
+<body>
+    <div class="container">
+        {% include 'header.html' %}
+        <form>
+            <div class="form-row">
+                <div class="row">
+                    <div class="col">
+                        <label for="inputEmail4">First Name</label>
+                      <input type="text" class="form-control" placeholder="First name">
+                    </div>
+                    <div class="col">
+                    <label for="inputEmail4">Last Name</label>
+                      <input type="text" class="form-control" placeholder="Last name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    </div>
+                    <div class="col">
+                        <label for="inputPassword4">Password</label>
+                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                    </div>
+
+                </div>
+
+             
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">ID Number</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="ID Number">
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Location</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Location">
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="inputState">Area of Specification</label>
+                    <select id="inputState" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>Car painting</option>
+                    <option>Tire fixing</option>
+                    <option>Engine fix</option>
+                    <option>Car window fix</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label>Upload Property Photo</label>
+                    <input type="file" name="photo">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <button type="submit" class="submit">Register</button>
+                </div>
+                <div class="col-4"></div>
+            </div>
+          </form>
+
+    </div>
+    <input type="text" name="fname" id="firstname">
+    <script>
+        var textBoxdata = $('#firstname').val();
+        // Store textbox current value
+        localStorage.setItem("firstnameval", "textBoxdata");
+
+        $(function(){
+            // Retrieve textbox previous value
+            var value = localStorage.getItem("firstnameval");
+
+            if (typeof(value) !== "undefined"){
+                $('#firstname').val(value)
+            }
+        });
+    </script>
+
+</body>
+</html>

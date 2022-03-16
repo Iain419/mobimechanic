@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.container{
+    width: 100%;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+}
+
+.navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+   
+}
+
+.logo{
+    width: 50px;
+    cursor: pointer;
+    margin: 30px 0;
+}
+
+.menu-icon{
+    width: 25px;
+    cursor: pointer;
+    display: none;
+}
+
+.carousel-caption{
+    left: 9%;
+    bottom: 6rem;
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+    margin-bottom: 0px;
+    border-radius: 7px;
+    transition-duration: 0.5s;
+
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #000;
+    padding: 30px 20px;
+    font-size: 15px;
+}
+
+nav ul li:hover{
+    transform: translateY(10%) translateX(2%);
+    background: #00d4ff;
+}
+
+nav ul li a:hover{
+    color: #fff;
+}
+
+.hire{
+    width: 140px;
+    height: 50px;
+    border: 0;
+    padding:12px 10px;
+    outline: none;
+    color: #fff;
+    background: linear-gradient(to right, #00d4ff, #00d4ff);
+    border-radius: 8px;
+    cursor: pointer;
+    transition-duration: 350ms;
+    transition: width 0.5s;
+    position: absolute;
+    margin-bottom: 0;   
+}
+
+.submit{
+    width: 140px;
+    height: 50px;
+    border: 0;
+    padding:12px 10px;
+    outline: none;
+    color: #fff;
+    background: linear-gradient(to right, #00d4ff, #00d4ff);
+    border-radius: 8px;
+    cursor: pointer;
+    transition-duration: 350ms;
+    transition: width 0.5s;
+    position: absolute;
+    margin-bottom: 0;
+}
+.welcome-button{
+    width: 140px;
+    height: 50px;
+    border: 0;
+    padding:12px 10px;
+    outline: none;
+    color: #fff;
+    background: linear-gradient(to right, #00d4ff, #00d4ff);
+    border-radius: 8px;
+    cursor: pointer;
+    transition-duration: 350ms;
+    transition: width 0.5s;
+    position: absolute;
+    margin-bottom: 0;
+}
+
+.welcome{
+    border-radius: 7px;
+    width: 100%;
+    height: 69vh;
+}
+
+.welcome-info{
+    right: 0;
+    text-align: left;
+    font-weight: bolder;
+}
+
+.welcome-button img{
+    width: 30px;
+    display: none;
+}
+
+.welcome-button:hover img{
+    display: block;
+}
+
+.welcome-button:hover{
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.carousel-caption::after{
+    content: "";
+    width: 10px;
+    height: 50%;
+    background: linear-gradient(#00d4ff, #00d4ff);
+    position: absolute;
+    left: -40px;
+    top: 2px;
+}
+
+.carousel-caption{
+    transition-duration: 350ms;
+}
+
+.carousel-caption:hover{
+    transform: translateX(2%) translateY(-1%);
+}
+
+
+
+.col-2 .mechanic{
+    width: 100%;
+}
+
+.register{
+
+}
+
+
+@media only screen and (max-width:1366px){
+    #menu-list{
+        display: block;
+    }
+}
+@media only screen and (max-width:700px){
+
+    nav ul{
+        width: 100%;
+        background: linear-gradient(#00d4ff, #00d4ff);
+        position: absolute;
+        top: 100px;
+        right: 0;
+        transition-duration: 350ms;
+        z-index: 9999;
+
+    }
+
+    .welcome-info{
+        font-size: 10px;
+    }
+    .welcome-info h2{
+        font-size: 15px;
+    }
+
+    .welcome{
+        width: 100%;
+        height: 30vh;
+    }
+
+
+
+    nav ul li{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .menu-icon{
+        display: block;
+    }
+
+    #menu-list{
+        display: none;
+    }
+    
+
+
+}

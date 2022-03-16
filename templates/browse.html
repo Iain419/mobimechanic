@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse for a mechanic here</title>
+</head>
+<body>
+    <div class="container">
+        {% include "header.html" %}
+        <section class="row">
+            {{msg}}
+            <section class="row">
+            {% for row in rows %}
+                <div class="col-md-4">
+                    <div class="card container bg-white text-dark">
+                        <!--We bind image as received from the route, check/view returns            -->
+                        <!-- We also decode the data with base 64 -->
+                        <br>
+                        <img src="data:;base64,{{row[4].decode('utf-8')}}" class="img-fluid" />
+                        <p class="text-muted">{{row[1]}}</p>
+                        <b>Description: <p>{{row[2] | safe}}</p></b>
+                        <b class="text-info">Cost: {{row[3]}} KES</b>
+                        <a href="/" class = "btn btn-success">Buy Now</a>
+                            <br>
+                            <a href="/" class = "btn btn-success">Add to cart</a>
+                        <br>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                    <img src="data:;base64,{{row[10].decode('utf-8')}}" class="img-fluid"/> <!-- Fetching the image -->
+                    <div class="card-body">
+                        <b>Name:</b><p class="text-muted">{{row[1]}} {{row[2]}}</p> <!--fetching the names-->
+                        <b>Phone number: </b><p class="text-muted">{{row[3]}}</p> <!--fetching the phonenumber-->
+                        <b>Location: </b><p class="text-muted">{{row[4]}}</p> <!--fetching the location-->
+                        <b>Services: </b>  <p class="text-muted">{{row[5]}}</p> <!--fetching the services-->
+                        <b>Ratings</b><p class="text-muted">{{row[6]}} / 10</p> <!--fetching the ratings-->
+                        <b>Charges</b><p class="text-muted">Ksh: {{row[7]}} per hour</p> <!--fetching the charges-->
+                        <button class="hire">Hire</button>   
+
+
+                        
+         
+                    </div>
+                </div>
+             {% endfor %}
+             </section>
+
+    </div>
+</body>
+</html>
