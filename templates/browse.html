@@ -10,21 +10,25 @@
     <div class="container">
         {% include "header.html" %}
         <section class="row">
-            {% for row in rows %}
-                <div class="card" style="width: 18rem;">
-                    <img src="data:;base64,{{row[10].decode('utf-8')}}" class="img-fluid"/> <!-- Fetching the image -->
-                    <div class="card-body">
-                        <b>Name:</b><p class="text-muted">{{row[1]}} {{row[2]}}</p> <!--fetching the names-->
-                        <b>Phone number: </b><p class="text-muted">{{row[3]}}</p> <!--fetching the phonenumber-->
-                        <b>Location: </b><p class="text-muted">{{row[4]}}</p> <!--fetching the location-->
-                        <b>Services: </b>  <p class="text-muted">{{row[5]}}</p> <!--fetching the services-->
-                        <b>Ratings</b><p class="text-muted">{{row[6]}} / 10</p> <!--fetching the ratings-->
-                        <b>Charges</b><p class="text-muted">Ksh: {{row[7]}} per hour</p> <!--fetching the charges-->
-                        <button class="hire">Hire</button>                      
-         
+            <div class="col-4">
+                {% for row in rows %}
+                    <div class="card" style="width: 18rem;">
+                        <img src="data:;base64,{{row[11].decode('utf-8')}}" class="img-fluid card-image"/> <!-- Fetching the image -->
+                        <div class="card-body">
+                            <p class="card-infor"><b>Name:</b>{{row[1]}} {{row[2]}}</p> <!--fetching the names-->
+                            <p class="card-infor"><b>Phone number: </b>0{{row[3]}}</p> <!--fetching the phonenumber-->
+                            <p class="card-infor"><b>Location: </b> {{row[4]}}</p> <!--fetching the location-->
+                            <p class="card-infor"><b>Services: </b> {{row[5]}}</p> <!--fetching the services-->
+                            <p class="card-infor"><b>Ratings</b> {{row[6]}} / 10</p> <!--fetching the ratings-->
+                            <p class="card-infor"><b>Charges: </b>Ksh: {{row[8]}} per hour</p> <!--fetching the charges-->
+                            <a href="" class="contactbt">
+                                <button class="contact">Hire</button>                      
+                            </a>
+                            
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </section>
 
     </div>

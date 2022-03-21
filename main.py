@@ -31,12 +31,12 @@ def index():
 @app.route('/browse')
 def browse():
     conn = pymysql.connect(
-        host='localhost',
-        user='root', 
-        password = "",
-        db='mobimechanic',
-        )
-    sql = 'SELECT * FROM `mechanics` WHERE `approve` = "yes"'
+            host='localhost',
+            user='root', 
+            password = "",
+            db='mobimechanic',
+            )
+    sql = 'SELECT * FROM `mechanics` WHERE `approve` = 1'
     cursor = conn.cursor()
     cursor.execute(sql)
     # Check the number of rows found
@@ -50,18 +50,16 @@ def browse():
 @app.route('/registerm', methods=['POST', 'GET'])
 def register():
     if request.method == 'POST':
-        # html.escape protects against XXS and SQL injection
-        idno = int(request.form['idno'])
         firstname = str(request.form['firstname'])
         lastname = str(request.form['lastname'])
-        phoneno = str(request.form['phoneno'])
-        location = str(request.form['location'])
-        areaofspecification = str(request.form['areaofspecification'])
-        services = str(request.form['services'])
-        ratings = str(request.form['ratings'])
-        charge = str(request.form['charge'])
         email = str(request.form['email'])
+        phoneno = str(request.form['phoneno'])
         password = str(request.form['password'])
+        pass_again = str(request.form['pass_again'])
+        idno = int(request.form['idno'])
+        location = str(request.form['location'])
+        charge = int(request.form['charge'])
+        areaofspecification = str(request.form['areaofspecification'])
         photo = request.files["photo"]
         # read image
         readimage = photo.read()  # read the image file data, the real image
@@ -73,41 +71,22 @@ def register():
         # check if passw match with  - password again(confirm)
         #  more validation on inputs can be done here, empties, length, range
 
-        if password != password:
-            return render_template('register.html', msg="Passwords do not match")
-
-        # Check password strength, this stops brute force.
-        elif (len(password) < 8):
-            return render_template('register.html', msg="Password must have eight characters")
-
-            # must have eigtht characters
-
-        elif not re.search("[a-z]", password):
-            return render_template('register.html', msg="Password must have small letters")
-
-        elif not re.search("[A-Z]", password):
-            return render_template('register.html', msg="Password must have a character with a capital letter")
-
-
-        elif not re.search("[0-9]", password):
-            return render_template('register.html', msg="Must have a number")
-
-        elif not re.search("[!@#$%^&*()_]", password):
-            return render_template('register.html', msg="Trial using symbols in your password e.g !@#$%^&*()")
-
+        if password != pass_again:
+            return render_template('register-m.html', msg="Passwords do not match")
         else:
-            conn = pymysql.connect('localhost', 'root', '', 'propertydb')
-            sql = 'INSERT INTO register (uname, email, passw, tel, Gender) VALUES (%s, %s, %s, %s, %s)'
+            conn = pymysql.connect(
+            host='localhost',
+            user='root', 
+            password = "",
+            db='mobimechanic',
+            )
+            sql = "INSERT INTO `mechanics`(`Id_no`, `Firstname`, `Lastname`, `phoneno`, `location`, `areaofspecification`,`charge`, `email`, `password`, `photo`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
             cursor = conn.cursor()
-            # try:
-            # password must be hashed, check how its provide below.
-            # Its hashed, check hash function on line 48
-            cursor.execute(sql, (uname, email, hash_password(passw), tel, Gender))
+            cursor.execute(sql, (idno, firstname, lastname, phoneno, location, areaofspecification, charge, email, password, encodedimage))
             conn.commit()
-            return redirect('/login')
+            return redirect('/')
 
-            # #except:
-            #     return render_template('register.html', msg2="Registration Unsuccessful")
+            
 
     else:
         return render_template('register-m.html')
@@ -120,5 +99,4 @@ def register():
 # run
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
-    print("App is running")
 # port = 10000

@@ -9,27 +9,44 @@
 <body>
     <div class="container">
         {% include 'header.html' %}
-        <form>
+        <h4 class="intro-job">Create you job account here</h4>
+        <h5>Already have an account? <a href="/login">Click here</a> </h5>
+        <form action="/registerm" method="POST" enctype="multipart/form-data">
             <div class="form-row">
                 <div class="row">
                     <div class="col">
                         <label for="inputEmail4">First Name</label>
-                      <input type="text" class="form-control" placeholder="First name">
+                      <input type="text" class="form-control" placeholder="First name" name="firstname">
                     </div>
                     <div class="col">
                     <label for="inputEmail4">Last Name</label>
-                      <input type="text" class="form-control" placeholder="Last name">
+                      <input type="text" class="form-control" placeholder="Last name" name="lastname">
                     </div>
                 </div>
+                
                 <div class="row">
                     <div class="col">
                         <label for="inputEmail4">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                        <input type="email" class="form-control" placeholder="Email" name="email">  
                     </div>
                     <div class="col">
-                        <label for="inputPassword4">Password</label>
-                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                        <label for="inputPassword4">Phone Number</label>
+                        <input type="text" class="form-control" placeholder="Phone Number" name="phoneno">
                     </div>
+                    
+
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label for="inputPassword4">Password</label>
+                        <input type="password" class="form-control" placeholder="Password" name="password">
+                    </div>
+                    <div class="col">
+                        <label for="inputPassword4">Renter your password</label>
+                        <input type="password" class="form-control" placeholder="Password again" name="pass_again">
+                    </div>
+                    <span class="text-danger">{{msg}}</span>
 
                 </div>
 
@@ -37,26 +54,34 @@
             </div>
             <div class="form-group">
               <label for="inputAddress">ID Number</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="ID Number">
+              <input type="text" class="form-control" placeholder="ID Number" name="idno">
             </div>
-            <div class="form-group">
-              <label for="inputAddress2">Location</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Location">
+            <div class="row">
+                <div class="col">
+                    <label for="inputAddress2">Location</label>
+                    <input type="text" class="form-control" placeholder="Location" name="location">
+                </div>
+                <div class="col">
+                    <label for="inputAddress2">Your charges</label>
+                    <input type="text" class="form-control" placeholder="Charges in KES" name="charge">
+                </div>
             </div>
+
 
             <div class="row">
                 <div class="col">
                     <label for="inputState">Area of Specification</label>
-                    <select id="inputState" class="form-control">
+                    <select class="form-control" name="areaofspecification">
                     <option selected>Choose...</option>
-                    <option>Car painting</option>
-                    <option>Tire fixing</option>
-                    <option>Engine fix</option>
-                    <option>Car window fix</option>
+                    <option id="carpainting">Car painting</option>
+                    <option id="tirefixing">Tire fixing</option>
+                    <option id="enginefix">Engine fix</option>
+                    <option id="carwindowfix">Car window fix</option>
                     </select>
                 </div>
                 <div class="col">
-                    <label>Upload Property Photo</label>
+                    <label>Upload Your Photo</label>
+                    <br>
                     <input type="file" name="photo">
                 </div>
             </div>
@@ -71,7 +96,7 @@
           </form>
 
     </div>
-    <input type="text" name="fname" id="firstname">
+    
     <script>
         var textBoxdata = $('#firstname').val();
         // Store textbox current value
