@@ -16,7 +16,22 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Account</a></li>
+                <li>
+                    <div class="account">
+                        <a href="#">Account</a>
+                        <div class="accountinfo">
+                            {% if session['name'] %}
+                            <h5>{{session['name']}}</h5>
+                            <a href="#">Logout</a>
+                            {% else %}
+                            <a href="#">User-Login</a>
+                            <a href="#">Mechanic-Login</a>
+                            <a href="#">User Sign Up</a>
+                            <a href="#">Mechanic Sign Up</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </li>
 
             </ul>
         </nav>

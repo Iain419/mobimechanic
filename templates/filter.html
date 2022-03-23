@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Mechanic based on your location</title>
+</head>
+<body>
+    <div class="container">
+        {% include 'header.html' %}
+    </div>
+    <br>
+    <br>
+    <br>
+    <form action="/filter" method="POST">
+        <div class="row filter-form">
+            <div class="col">
+                <label for="inputAddress2">Location</label>
+                <input type="text" class="form-control" placeholder="Location" name="location">
+                <h5 class="text-danger">{{msg}}</h5>
+            </div>
+            <div class="col">
+                <button type="submit" class="filter">Filter</button>
+            </div>
+        </div>
+    </form>
+    
+</body>
+</html>

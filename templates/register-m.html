@@ -73,10 +73,10 @@
                     <label for="inputState">Area of Specification</label>
                     <select class="form-control" name="areaofspecification">
                     <option selected>Choose...</option>
-                    <option id="carpainting">Car painting</option>
-                    <option id="tirefixing">Tire fixing</option>
-                    <option id="enginefix">Engine fix</option>
-                    <option id="carwindowfix">Car window fix</option>
+                    <option value="carpainting">Car painting</option>
+                    <option value="tirefixing">Tire fixing</option>
+                    <option value="enginefix">Engine fix</option>
+                    <option value="carwindowfix">Car window fix</option>
                     </select>
                 </div>
                 <div class="col">
@@ -97,20 +97,7 @@
 
     </div>
     
-    <script>
-        var textBoxdata = $('#firstname').val();
-        // Store textbox current value
-        localStorage.setItem("firstnameval", "textBoxdata");
 
-        $(function(){
-            // Retrieve textbox previous value
-            var value = localStorage.getItem("firstnameval");
-
-            if (typeof(value) !== "undefined"){
-                $('#firstname').val(value)
-            }
-        });
-    </script>
 
 </body>
 </html>

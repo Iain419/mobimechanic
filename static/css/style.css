@@ -57,7 +57,7 @@ nav ul li a{
 }
 
 nav ul li:hover{
-    transform: translateY(10%) translateX(2%);
+    transform: scale(1.1);
     background: #00d4ff;
 }
 
@@ -178,14 +178,55 @@ nav ul li a:hover{
 }
 
 
+.accountinfo{
+    position: absolute;
+    background-color: #f1f1ff;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    display: none;
+    margin-top: 10px;
+}
+
+.account:hover .accountinfo{
+    display: block;
+}
+
+.filter-form{
+    margin-left: 200px;
+}
+
+.filter{
+    margin-top: 20px;
+    width: 140px;
+    height: 40px;
+    border: 0;
+    padding:9px 10px;
+    outline: none;
+    color: #fff;
+    background: linear-gradient(to right, #00d4ff, #00d4ff);
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+.accountinfo a{
+    float: left;
+    color: black;
+    padding:10px;
+
+}
+
 
 .col-2 .mechanic{
     width: 100%;
 }
 
-.register{
-
+.accountinfo a:hover{
+    color: black;
 }
+
+
 
 
 @media only screen and (max-width:1366px){
