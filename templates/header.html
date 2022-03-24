@@ -11,23 +11,23 @@
 <body>
     <div class="navbar">
         <img src="../static/assets/mainicon.png" alt="" class="logo">
+        <h4 class="mobimechanic">mobimechanic</h4>
         <nav>
             <ul id="menu-list">
                 <li><a href="/">Home</a></li>
                 <li><a href="#">Services</a></li>
-                <li><a href="#">About</a></li>
                 <li>
                     <div class="account">
                         <a href="#">Account</a>
                         <div class="accountinfo">
                             {% if session['name'] %}
-                            <h5>{{session['name']}}</h5>
-                            <a href="#">Logout</a>
+                            <h6>Logged in</h6>
+                            <a href="/logout">Logout</a>
                             {% else %}
-                            <a href="#">User-Login</a>
-                            <a href="#">Mechanic-Login</a>
-                            <a href="#">User Sign Up</a>
-                            <a href="#">Mechanic Sign Up</a>
+                            <a href="/loginu">User-Login</a>
+                            <a href="/loginm">Mechanic-Login</a>
+                            <a href="/registeru">User Sign Up</a>
+                            <a href="/registerm">Mechanic Sign Up</a>
                             {% endif %}
                         </div>
                     </div>

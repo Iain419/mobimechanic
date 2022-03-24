@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -22,7 +23,14 @@
     cursor: pointer;
     margin: 30px 0;
 }
-
+.mobimechanic{
+    cursor: pointer;
+    margin-left: 20px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    float: left;
+    font-family: 'Bungee Shade';
+}
 .menu-icon{
     width: 25px;
     cursor: pointer;
@@ -33,6 +41,7 @@
     left: 9%;
     bottom: 6rem;
 }
+
 
 nav{
     flex: 1;
@@ -95,9 +104,17 @@ nav ul li a:hover{
     background: linear-gradient(to right, #00d4ff, #00d4ff);
     border-radius: 8px;
     cursor: pointer;
-    transition: width 0.5s;
+    transition-duration: 400ms;
+    transition-delay: 20ms;
     display: block;
     margin: auto; 
+}
+
+.contact:hover{
+    transform: translateX(-3%);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 .submit{
@@ -110,10 +127,16 @@ nav ul li a:hover{
     background: linear-gradient(to right, #00d4ff, #00d4ff);
     border-radius: 8px;
     cursor: pointer;
-    transition-duration: 350ms;
-    transition: width 0.5s;
-    position: absolute;
+    transition-duration: 400ms;
+    transition-delay: 20ms;
     margin-bottom: 0;
+}
+
+.submit:hover{
+    transform: scale(1.1);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 .welcome-button{
     width: 140px;
@@ -129,6 +152,7 @@ nav ul li a:hover{
     transition: width 0.5s;
     position: absolute;
     margin-bottom: 0;
+    
 }
 
 .welcome{
@@ -161,12 +185,24 @@ nav ul li a:hover{
 
 .carousel-caption::after{
     content: "";
-    width: 10px;
+    width: 9px;
     height: 50%;
     background: linear-gradient(#00d4ff, #00d4ff);
     position: absolute;
     left: -40px;
     top: 19px;
+}
+
+.contactfooter{
+    border-right: 1px solid #fff;
+}
+
+.mobi{
+    margin-top: 25px;
+}
+
+.footerc{
+    margin-left: 65px;
 }
 
 .carousel-caption{
@@ -183,17 +219,23 @@ nav ul li a:hover{
     background-color: #f1f1ff;
     min-width: 150px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
     display: none;
     margin-top: 10px;
+    z-index: 2200000
 }
 
 .account:hover .accountinfo{
+    z-index: 9999;
     display: block;
 }
 
 .filter-form{
     margin-left: 200px;
+}
+
+.form-wrapper{
+    max-width:500px;
+    margin:auto;
 }
 
 .filter{
@@ -208,6 +250,12 @@ nav ul li a:hover{
     border-radius: 8px;
     cursor: pointer;
     margin-bottom: 0;
+}
+.accountinfo h6{
+    float: left;
+    color: black;
+    padding:10px;
+
 }
 
 .accountinfo a{
@@ -226,6 +274,37 @@ nav ul li a:hover{
     color: black;
 }
 
+.findus{
+    margin-top: 30px;
+} 
+
+.login-form{
+    margin-top: 30px;
+    border: solid; 
+    border-radius: 2%; 
+    border-width:thick; 
+    padding: 10px;
+}
+
+.bottom {
+    background: black;
+    margin: 40px 2px 30px 2px;
+    color: #fff;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+td img{
+    width: 30px;
+}
+td{
+    padding: 7px;
+}
+
+table, th, td {
+    border: 1px solid;
+    border-radius: 7px;
+}
 
 
 
@@ -243,9 +322,10 @@ nav ul li a:hover{
         top: 100px;
         right: 0;
         transition-duration: 350ms;
-        z-index: 9999;
+        z-index: 1;
 
     }
+  
 
     .welcome-info{
         font-size: 10px;
@@ -265,6 +345,7 @@ nav ul li a:hover{
         display: block;
         margin-top: 10px;
         margin-bottom: 10px;
+        z-index: 1000;
     }
     .menu-icon{
         display: block;

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an account here!!</title>
+</head>
+<body>
+    <div class="container">
+        {% include 'header.html' %}
+        <h4 class="intro-job">Create you Mobimechanic account here</h4>
+        <h5>Already have an account? <a href="/loginu">Click here</a> </h5>
+        <form action="/registeru" method="POST" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="row">
+                    <div class="col">
+                        <label for="inputEmail4">First Name</label>
+                      <input type="text" class="form-control" placeholder="First name" name="firstname">
+                    </div>
+                    <div class="col">
+                    <label for="inputEmail4">Last Name</label>
+                      <input type="text" class="form-control" placeholder="Last name" name="lastname">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" placeholder="Email" name="email">  
+                    </div>
+                    <div class="col">
+                        <label for="inputPassword4">Phone Number</label>
+                        <input type="text" class="form-control" placeholder="Phone Number" name="phoneno">
+                    </div>
+                    
+
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label for="inputPassword4">Password</label>
+                        <input type="password" class="form-control" placeholder="Password" name="password">
+                    </div>
+                    <div class="col">
+                        <label for="inputPassword4">Renter your password</label>
+                        <input type="password" class="form-control" placeholder="Password again" name="pass_again">
+                    </div>
+                    <span class="text-danger">{{msg}}</span>
+
+                </div>
+
+             
+            </div>
+           
+            <div class="col">
+                    <label>Upload Your Photo</label>
+                    <br>
+                    <input type="file" name="photo">
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <button type="submit" class="submit">Register</button>
+                </div>
+                <div class="col-4"></div>
+            </div>
+          </form>
+
+          {% include 'footer.html' %}
+    </div>
+
+
+</body>
+</html>

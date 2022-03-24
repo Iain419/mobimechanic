@@ -6,25 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find a Mechanic based on your location</title>
 </head>
-<body>
+<>
     <div class="container">
         {% include 'header.html' %}
     </div>
     <br>
     <br>
     <br>
+    <br>
+    <br>
+    <h1 class="text-danger">{{name}}</h1>
     <form action="/filter" method="POST">
         <div class="row filter-form">
             <div class="col">
                 <label for="inputAddress2">Location</label>
                 <input type="text" class="form-control" placeholder="Location" name="location">
-                <h5 class="text-danger">{{msg}}</h5>
+                <h6 class="text-danger">{{msg}}</h6>
+            </div>
+            <div class="col">
+                <label for="inputState">Car Problem</label>
+                    <select class="form-control" name="problem">
+                    <option selected>Choose...</option>
+                    <option value="Car painting">Car painting</option>
+                    <option value="Tire fixing">Tire fixing</option>
+                    <option value="Engine fix">Engine fix</option>
+                    <option value="Car window fix">Car window fix</option>
+                    </select>
             </div>
             <div class="col">
                 <button type="submit" class="filter">Filter</button>
             </div>
         </div>
     </form>
+    <br><br><br><br><br>
+    <div class="container">
+        {% include 'footer.html' %}
+    </div>
+
     
 </body>
 </html>

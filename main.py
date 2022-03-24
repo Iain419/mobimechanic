@@ -1,6 +1,5 @@
 from base64 import b64encode
 from datetime import timedelta
-import flask
 import html
 
 
@@ -30,10 +29,10 @@ def index():
 
 
 
-@app.route('/login', methods=['POST', 'GET'])
-def login():
+@app.route('/loginu', methods=['POST', 'GET'])
+def loginu():
     if request.method == 'POST':
-        email = html.escape(str(request.form['email']))
+        email = str(request.form['email'])
         passw = str(request.form['passw']) 
         conn = pymysql.connect(
             host='localhost',
@@ -41,42 +40,82 @@ def login():
             password = "",
             db='mobimechanic',
             )
-        sql = "Select * from mechanics where email=%s"
-        name = "SELECT `Firstname` FROM `mechanics` WHERE `email` = %s AND passw = %s"
+        sql = "Select * from user where email=%s AND Password = %s"
+        name = "SELECT `Firstname` FROM `user` WHERE `email` = %s AND `Password` = %s"
         cursor = conn.cursor()  # execute sql
         cursor.execute(sql, (email,passw))
-
+        cursor2 = conn.cursor()
+        cursor2.execute(name, (email,passw))
+        name = cursor2.fetchone()
+        
 
         if cursor.rowcount == 0:
-            return render_template('login.html', msg='Login failed, Wrong password or Username')
+            return render_template('login-u.html', msg='Login failed, Wrong password or Username')
 
         elif cursor.rowcount == 1:
                 session['name'] =   name;
-                session.permanent = True 
+                session.permanent = True
                 return render_template('filter.html')
 
 
     else:
-        return render_template('login.html')
+        return render_template('login-u.html')
 
+@app.route('/loginm', methods=['POST', 'GET'])
+def loginm():
+    if request.method == 'POST':
+        email = str(request.form['email'])
+        passw = str(request.form['passw']) 
+        conn = pymysql.connect(
+            host='localhost',
+            user='root', 
+            password = "",
+            db='mobimechanic',
+            )
+        sql = "Select * from mechanics where email=%s AND Password = %s"
+        name = "SELECT `Firstname` FROM `mechanics` WHERE `email` = %s AND `Password` = %s"
+        cursor = conn.cursor()  # execute sql
+        cursor.execute(sql, (email,passw))
+        cursor2 = conn.cursor()
+        cursor2.execute(name, (email,passw))
+        name = cursor2.fetchone()
+        
+
+        if cursor.rowcount == 0:
+            return render_template('login-m.html', msg='Login failed, Wrong password or Username')
+
+        elif cursor.rowcount == 1:
+                session['name'] =   name;
+                session.permanent = True
+                return render_template('filter.html')
+
+
+    else:
+        return render_template('login-m.html')
+
+@app.route('/logout')
+def logout():
+    session.pop('name', None)
+    return render_template('filter.html')
 
 # filter
 @app.route('/filter', methods=['POST', 'GET'])
 def filter():
     if request.method == 'POST':
         location = str(request.form['location'])
+        problem = str(request.form['problem'])
         conn = pymysql.connect(
             host='localhost',
             user='root',
             password = "",
             db='mobimechanic'
         )
-        sql = 'SELECT * FROM `mechanics` WHERE `approve` = 1 AND location = %s'
+        sql = 'SELECT * FROM `mechanics` WHERE `approve` = 1 AND location = %s AND areaofspecification = %s'
         cursor = conn.cursor()
-        cursor.execute(sql, (location))
+        cursor.execute(sql, (location,problem))
         # Check the number of rows found
         if cursor.rowcount < 1:
-                return render_template('filter.html', msg="The location does not exist in the database")
+                return render_template('filter.html', msg="Sorry we could not find you a mechanic")
         else:
             rows = cursor.fetchall()
             return render_template('browse.html', rows=rows)
@@ -133,23 +172,25 @@ def registerm():
     else:
         return render_template('register-m.html')
 
-@app.route('/register', methods=['POST', 'GET'])
-def register():
+
+@app.route('/registeru', methods=['POST', 'GET'])
+def registeru():
     if request.method == 'POST':
         firstname = str(request.form['firstname'])
         lastname = str(request.form['lastname'])
+        phoneno = int(request.form['phoneno'])
         email = str(request.form['email'])
-        phoneno = str(request.form['phoneno'])
         password = str(request.form['password'])
         pass_again = str(request.form['pass_again'])
+        photo = request.files["photo"]
+        # read image
+        readimage = photo.read()  # read the image file data, the real image
+        # encode image to base64 and decode to utf-8
+        encodedimage = b64encode(readimage).decode("utf-8")
 
-
-        import re
-        # check if passw match with  - password again(confirm)
-        #  more validation on inputs can be done here, empties, length, range
 
         if password != pass_again:
-            return render_template('register-m.html', msg="Passwords do not match")
+            return render_template('register-u.html', msg="Passwords do not match")
         else:
             conn = pymysql.connect(
             host='localhost',
@@ -157,16 +198,14 @@ def register():
             password = "",
             db='mobimechanic',
             )
-            sql = "INSERT INTO `users`(firstname, lastname, email, phoneno, password) VALUES (%s, %s, %s, %s, %s)"
+            sql = "INSERT INTO `user`(`Firstname`, `Lastname`, `phoneno`, `Email`, `Password`, `photo`) VALUES (%s, %s, %s, %s, %s, %s)"
             cursor = conn.cursor()
-            cursor.execute(sql, (firstname, lastname, email, phoneno, password))
+            cursor.execute(sql, (firstname, lastname, phoneno, email, password, encodedimage))
             conn.commit()
-            return redirect('/')
-
-            
-
+            return redirect('/loginu')
     else:
-        return render_template('register-m.html')
+        return render_template('register-u.html')
+
 
 
 

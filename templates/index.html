@@ -4,114 +4,113 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to mobilmechanic</title>
+    <title>Welcome to mobimechanic</title>
     <link rel="stylesheet" href="../static/css/bootstrap.css">
     <link rel="stylesheet" href="../static/css/style.css">
-
-    <script src="app.js"></script>
+    <script src="../static/js/app.js"></script>
 </head>
 <body>
     <div class="container">
+
         <div class="navbar">
             <img src="../static/assets/mainicon.png" alt="" class="logo">
+            <h4 class="mobimechanic" onclick="welcome()">mobimechanic</h4>
             <nav>
-                <ul>
-                    <li><a href="#">Account</a></li>
+                <ul id="menu-list">
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+    
                 </ul>
             </nav>
-
+            <img src="../static/assets/menu.png" alt="" class="menu-icon" onclick="togglemenu('menu-list')">
         </div>
-
-        <section class="row">
-            <div class="col-md-12">
-                <div id="demo" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ul class="carousel-indicators">
-                    <li data-target="#demo" data-slide-to="0" class="active"></li>
-                    <li data-target="#demo" data-slide-to="1"></li>
-                    <li data-target="#demo" data-slide-to="2"></li>
-                    <li data-target="#demo" data-slide-to="3"></li>
-                    </ul>
-        
-                    <!-- The slideshow -->
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="../static/assets/carousel/house1.jpg" class="welcome">
-                            <div class="carousel-caption welcome-info">
-                                <h2>Welcome to Mobimechanic</h2>
-                                <h3>Insearch of a mechanic?</h3>
-                                <h4>We got you sorted!!!</h4>
-                                <h5>In search of a mechanic press here</h5>
-                                <a href="/browse">
-                                    <button class="welcome-button">Browse<img src="../static/assets/arrow.png" alt=""></button>
-                                </a>
-                                
-                                <br/><br>
+    
+            <section class="row">
+                <div class="col-md-12">
+                    <div id="demo" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                        <li data-target="#demo" data-slide-to="3"></li>
+                        </ul>
             
-                                <h5>In search of a Job press here</h5>
-                                <a href="/registerm">
-                                    <button class="welcome-button">Job<img src="../static/assets/arrow.png" alt=""></button>
-                                </a>
+                        <!-- The slideshow -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../static/assets/video/engine.gif" class="welcome">
+                                <div class="carousel-caption welcome-info">
+                                    <h2>Welcome to Mobimechanic</h2>
+                                    <h3>Insearch of a mechanic?</h3>
+                                    <h4>We got you sorted!!!</h4>
+                                    <h5>In search of a mechanic press here</h5>
+                                    <a href="/browse">
+                                        <button class="welcome-button">Browse<img src="../static/assets/arrow.png" alt=""></button>
+                                    </a>
+                                    
+                                    <br/><br>
+                
+                                    <h5>In search of a Job press here</h5>
+                                    <a href="/registerm">
+                                        <button class="welcome-button">Job<img src="../static/assets/arrow.png" alt=""></button>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-        
-                        <div class="carousel-item">
-                            <img src="..static/assets/carousel/house2.jpg" alt="Arrival" class="welcome">
-                                <div class="carousel-caption">
+            
+                            <div class="carousel-item">
+                                <img src="..static/assets/carousel/house2.jpg" alt="Arrival" class="welcome">
+                                    <div class="carousel-caption">
+                                        <h2>Mansion</h2>
+                                        <p><b>Price:</b>3,500,000KES</p>
+                                        <p>Location: Kiambu</p>
+                                        <a href="" class="btn btn-success">Order Now</a>
+                                    </div>
+                            </div>
+            
+                            <div class="carousel-item">
+                                <img src="..static/assets/carousel/house3.jpg" alt="Arrival" class="welcome">
+                                <div class="carousel-caption welcome-info">
                                     <h2>Mansion</h2>
-                                    <p><b>Price:</b>3,500,000KES</p>
-                                    <p>Location: Kiambu</p>
+                                    <p><b>Price:</b>:2,000,000KES</p>
+                                    <p>Location: Limuru</p>
                                     <a href="" class="btn btn-success">Order Now</a>
                                 </div>
-                        </div>
-        
-                        <div class="carousel-item">
-                            <img src="..static/assets/carousel/house3.jpg" alt="Arrival" class="welcome">
-                            <div class="carousel-caption welcome-info">
-                                <h2>Mansion</h2>
-                                <p><b>Price:</b>:2,000,000KES</p>
-                                <p>Location: Limuru</p>
-                                <a href="" class="btn btn-success">Order Now</a>
+                            </div>
+            
+                            <div class="carousel-item">
+                                <img src="../static/house4.jpg" alt="Arrival" class="welcome">
+                                <div class="carousel-caption">
+                                    <h2>Bungalow</h2>
+                                    <p><b>Price:</b>2,500,000KES</p>
+                                    <a href="" class="btn btn-success">Order Now</a>
+                                </div>
                             </div>
                         </div>
-        
-                        <div class="carousel-item">
-                            <img src="../static/house4.jpg" alt="Arrival" class="welcome">
-                            <div class="carousel-caption">
-                                <h2>Bungalow</h2>
-                                <p><b>Price:</b>2,500,000KES</p>
-                                <a href="" class="btn btn-success">Order Now</a>
-                            </div>
-                        </div>
+            
+                        <!-- Left and right controls
+                        <a class="carousel-control-prev" href='#demo' data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href='#demo' data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        </a> -->
+            
                     </div>
-        
-                    <!-- Left and right controls
-                    <a class="carousel-control-prev" href='#demo' data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href='#demo' data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                    </a> -->
-        
                 </div>
-            </div>
-        </section>
-        
-
+            </section>
+            
+    
+        </div>
+    </div>
+    <div class="container">
+        {% include 'footer.html' %}
     </div>
 
-    <script>
-        var x = document.getElementById('menu-list')
-        function togglemenu(x){
-            x = document.getElementById(x);
-            if(x.style.display == 'none'){
-                x.style.display = 'block';
-            } else {
-                x.style.display = 'none';
-            }
-        }
-        
-    </script>
+
 
 </body>
 </html>
