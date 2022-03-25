@@ -18,10 +18,15 @@
                 <li><a href="#">Services</a></li>
                 <li>
                     <div class="account">
+                        {% if session.username %}
+                        <a href="#">
+                            {{session.username}}
+                        </a>
+                        {% else %}
                         <a href="#">Account</a>
+                        {% endif %}
                         <div class="accountinfo">
-                            {% if session['name'] %}
-                            <h6>Logged in</h6>
+                            {% if session['username'] %}
                             <a href="/logout">Logout</a>
                             {% else %}
                             <a href="/loginu">User-Login</a>

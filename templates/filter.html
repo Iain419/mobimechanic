@@ -21,16 +21,17 @@
                 <label for="inputAddress2">Location</label>
                 <input type="text" class="form-control" placeholder="Location" name="location">
                 <h6 class="text-danger">{{msg}}</h6>
+                <h7>{{session.email}}</h7>
             </div>
             <div class="col">
-                <label for="inputState">Car Problem</label>
-                    <select class="form-control" name="problem">
-                    <option selected>Choose...</option>
-                    <option value="Car painting">Car painting</option>
-                    <option value="Tire fixing">Tire fixing</option>
-                    <option value="Engine fix">Engine fix</option>
-                    <option value="Car window fix">Car window fix</option>
-                    </select>
+                <label for="inputState">Area of Specification</label>
+                <select class="form-control" name="problem">
+                <option selected>Choose...</option>
+                <option value="carpainting">Car painting</option>
+                <option value="tirefixing">Tire fixing</option>
+                <option value="enginefix">Engine fix</option>
+                <option value="carwindowfix">Car window fix</option>
+                </select>
             </div>
             <div class="col">
                 <button type="submit" class="filter">Filter</button>

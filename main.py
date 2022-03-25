@@ -32,7 +32,7 @@ def index():
 @app.route('/loginu', methods=['POST', 'GET'])
 def loginu():
     if request.method == 'POST':
-        email = str(request.form['email'])
+        username = str(request.form['username'])
         passw = str(request.form['passw']) 
         conn = pymysql.connect(
             host='localhost',
@@ -40,12 +40,12 @@ def loginu():
             password = "",
             db='mobimechanic',
             )
-        sql = "Select * from user where email=%s AND Password = %s"
-        name = "SELECT `Firstname` FROM `user` WHERE `email` = %s AND `Password` = %s"
+        sql = "Select * from user where username=%s AND Password = %s"
+        name = "SELECT `Firstname` FROM `user` WHERE `username` = %s AND `Password` = %s"
         cursor = conn.cursor()  # execute sql
-        cursor.execute(sql, (email,passw))
+        cursor.execute(sql, (username,passw))
         cursor2 = conn.cursor()
-        cursor2.execute(name, (email,passw))
+        cursor2.execute(name, (username,passw))
         name = cursor2.fetchone()
         
 
@@ -53,7 +53,7 @@ def loginu():
             return render_template('login-u.html', msg='Login failed, Wrong password or Username')
 
         elif cursor.rowcount == 1:
-                session['name'] =   name;
+                session['username'] =   username;
                 session.permanent = True
                 return render_template('filter.html')
 
@@ -64,7 +64,7 @@ def loginu():
 @app.route('/loginm', methods=['POST', 'GET'])
 def loginm():
     if request.method == 'POST':
-        email = str(request.form['email'])
+        username = str(request.form['username'])
         passw = str(request.form['passw']) 
         conn = pymysql.connect(
             host='localhost',
@@ -72,12 +72,12 @@ def loginm():
             password = "",
             db='mobimechanic',
             )
-        sql = "Select * from mechanics where email=%s AND Password = %s"
-        name = "SELECT `Firstname` FROM `mechanics` WHERE `email` = %s AND `Password` = %s"
+        sql = "Select * from mechanics where username=%s AND Password = %s"
+        name = "SELECT `Firstname` FROM `mechanics` WHERE `username` = %s AND `Password` = %s"
         cursor = conn.cursor()  # execute sql
-        cursor.execute(sql, (email,passw))
+        cursor.execute(sql, (username,passw))
         cursor2 = conn.cursor()
-        cursor2.execute(name, (email,passw))
+        cursor2.execute(name, (username,passw))
         name = cursor2.fetchone()
         
 
@@ -85,7 +85,7 @@ def loginm():
             return render_template('login-m.html', msg='Login failed, Wrong password or Username')
 
         elif cursor.rowcount == 1:
-                session['name'] =   name;
+                session['username'] =   username;
                 session.permanent = True
                 return render_template('filter.html')
 
@@ -95,7 +95,7 @@ def loginm():
 
 @app.route('/logout')
 def logout():
-    session.pop('name', None)
+    session.pop('username', None)
     return render_template('filter.html')
 
 # filter
@@ -133,6 +133,7 @@ def registerm():
     if request.method == 'POST':
         firstname = str(request.form['firstname'])
         lastname = str(request.form['lastname'])
+        username = str(request.form['username'])
         email = str(request.form['email'])
         phoneno = str(request.form['phoneno'])
         password = str(request.form['password'])
@@ -161,9 +162,9 @@ def registerm():
             password = "",
             db='mobimechanic',
             )
-            sql = "INSERT INTO `mechanics`(`Id_no`, `Firstname`, `Lastname`, `phoneno`, `location`, `areaofspecification`,`charge`, `email`, `password`, `photo`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            sql = "INSERT INTO `mechanics`(`Id_no`, `Firstname`, `Lastname`, `username`, `phoneno`, `location`, `areaofspecification`,`charge`, `email`, `password`, `photo`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
             cursor = conn.cursor()
-            cursor.execute(sql, (idno, firstname, lastname, phoneno, location, areaofspecification, charge, email, password, encodedimage))
+            cursor.execute(sql, (idno, firstname, lastname, username, phoneno, location, areaofspecification, charge, email, password, encodedimage))
             conn.commit()
             return redirect('/')
 
@@ -178,6 +179,7 @@ def registeru():
     if request.method == 'POST':
         firstname = str(request.form['firstname'])
         lastname = str(request.form['lastname'])
+        username = str(request.form['username'])
         phoneno = int(request.form['phoneno'])
         email = str(request.form['email'])
         password = str(request.form['password'])
@@ -187,7 +189,7 @@ def registeru():
         readimage = photo.read()  # read the image file data, the real image
         # encode image to base64 and decode to utf-8
         encodedimage = b64encode(readimage).decode("utf-8")
-
+        
 
         if password != pass_again:
             return render_template('register-u.html', msg="Passwords do not match")
@@ -198,15 +200,22 @@ def registeru():
             password = "",
             db='mobimechanic',
             )
-            sql = "INSERT INTO `user`(`Firstname`, `Lastname`, `phoneno`, `Email`, `Password`, `photo`) VALUES (%s, %s, %s, %s, %s, %s)"
+            sql = "INSERT INTO `user`(`Firstname`, `Lastname`, `username`, `phoneno`, `Email`, `Password`) VALUES (%s, %s, %s, %s, %s, %s)"
             cursor = conn.cursor()
-            cursor.execute(sql, (firstname, lastname, phoneno, email, password, encodedimage))
+            cursor.execute(sql, (firstname, lastname, username, phoneno, email, password))
             conn.commit()
             return redirect('/loginu')
     else:
         return render_template('register-u.html')
 
+# @app.route('/hire', methods=['GET', 'POST'])
+# def hire():
+#     product = Product.query.filter(Product.id == product_id)
+#     cart_item = CartItem(product=product)
+#     db.session.add(cart_item)
+#     db.session.commit()
 
+#     return render_tempate('home.html', product=products)
 
 
 
