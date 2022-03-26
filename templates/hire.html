@@ -4,23 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Browse for a mechanic here</title>
+    <title>Hired Mechanics</title>
 </head>
 <body>
     <div class="container">
-        {% include "header.html" %}
-        <form action="/hired" method="POST" class="hired-mechanics">
-            <div class="row">
-                <div class="col">
-                    <input type="text" readonly class="form-control-plaintext" id="username" value="{{session.username}}" name="user_username" style="display: none">
-                </div>
-                <div class="col">
-                    <button class="contact" type="hired-m">View Hired mechanics</button>
-                </div>
+        {% include 'header.html'%}
+        <section class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <h3>
+                    {{msg}}
+                </h3>
             </div>
-        </form>
-
-        
+            <div class="col-4"></div>
+        </section>
+        <br>
         <section class="row">
             <div class="col-4">
                 {% for row in rows %}
@@ -52,5 +50,6 @@
         </section>
         {% include 'footer.html' %}
     </div>
+    
 </body>
 </html>

@@ -9,9 +9,30 @@
     <div class="container">
         {% include 'header.html' %}
     </div>
-    <br>
-    <br>
-    <br>
+    {% if session.role == 'mechanic'%}
+    <form action="/hired" method="POST" class="hired-mechanics">
+        <div class="row">
+            <div class="col">
+                <input type="text" readonly class="form-control-plaintext" id="username" value="{{session.username}}" name="user_username" style="display: none">
+            </div>
+            <div class="col">
+                <button class="contact" type="hired-m"><img src="../static/assets/mainicon.png" alt="image">View Your current jobs</button>
+            </div>
+        </div>
+    </form>
+    {% else %}
+    <form action="/hired" method="POST" class="hired-mechanics">
+        <div class="row">
+            <div class="col">
+                <input type="text" readonly class="form-control-plaintext" id="username" value="{{session.username}}" name="user_username" style="display: none">
+            </div>
+            <div class="col">
+                <button class="contact" type="hired-m"><img src="../static/assets/mainicon.png" alt="image">View Hired mechanics</button>
+
+            </div>
+        </div>
+    </form>
+    {% endif %}
     <br>
     <br>
     <h1 class="text-danger">{{name}}</h1>
