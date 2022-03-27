@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Current Jobs</title>
+</head>
+<body>
+    <div class="container">
+        {% include 'header.html'%}
+        <section class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <h3>
+                    {{msg}}
+                </h3>
+            </div>
+            <div class="col-4"></div>
+        <br><br><br>
+        </section>
+        {% for row in rows %}
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <form action="/hire" method="POST">
+                                <p class="card-infor"><b>Name: </b>{{row[0]}} {{row[1]}}</p> <!--fetching the names-->
+                                <p class="card-infor"><b>Phone number: </b>0{{row[3]}}</p> <!--fetching the phonenumber-->
+                                <p class="card-infor"><b>email: </b> {{row[4]}}</p> <!--fetching the email address-->
+                            </form>
+                            
+                        </div>
+                    </div>
+
+
+
+                    
+                {% endfor %}
+        {% include 'footer.html'%}
+    </div>
+</body>
+</html>

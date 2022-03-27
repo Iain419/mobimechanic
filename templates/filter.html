@@ -10,10 +10,10 @@
         {% include 'header.html' %}
     </div>
     {% if session.role == 'mechanic'%}
-    <form action="/hired" method="POST" class="hired-mechanics">
+    <form action="/jobs" method="POST" class="hired-mechanics">
         <div class="row">
             <div class="col">
-                <input type="text" readonly class="form-control-plaintext" id="username" value="{{session.username}}" name="user_username" style="display: none">
+                <input type="text" readonly class="form-control-plaintext" id="username" value="{{session.username}}" name="mechanic_username" style="display: none">
             </div>
             <div class="col">
                 <button class="contact" type="hired-m"><img src="../static/assets/mainicon.png" alt="image">View Your current jobs</button>

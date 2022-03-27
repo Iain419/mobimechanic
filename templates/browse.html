@@ -28,7 +28,7 @@
                         <img src="data:;base64,{{row[11].decode('utf-8')}}" class="img-fluid card-image"/> <!-- Fetching the image -->
                         <div class="card-body">
                             <form action="/hire" method="POST">
-                                <p class="card-infor"><b>Name :</b>{{row[1]}} {{row[2]}}</p> <!--fetching the names-->
+                                <p class="card-infor"><b>Name: </b>{{row[1]}} {{row[2]}}</p> <!--fetching the names-->
                                 <div class="row" style="display: none">
                                     <div class="col"><p class="card-infor"><b>Username: </b></p></div>
                                     <div class="col"><input type="text" readonly class="form-control-plaintext" id="username" value="{{row[3]}}" name="username_m"></div>

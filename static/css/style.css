@@ -232,6 +232,19 @@ nav ul li a:hover{
 .mobi{
     margin-top: 25px;
 }
+.mobi img{
+    border-radius: 50%;
+}
+
+.mobi h5{
+    font-family: 'Bungee Shade';
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+
+}
+
+
 
 .footerc{
     margin-left: 65px;

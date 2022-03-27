@@ -230,7 +230,7 @@ def hire():
     
 @app.route('/hired', methods=['POST', 'GET'])
 def hired():
-    if request.method == 'POST':
+    if request.method == 'POST' and 'username' in session:
         user_username = str(request.form['user_username'])
         conn = pymysql.connect(
                 host='localhost',
@@ -248,8 +248,31 @@ def hired():
             rows = cursor.fetchall()
             return render_template('hire.html', rows=rows, msg="Your hired mechanics")
     else:
-        return redirect('/')
+        return render_template('login-u.html',  msg="Login in to view your hired mechanics")
 
+@app.route('/jobs', methods=['POST', 'GET'])
+def jobs():
+    if request.method == 'POST':
+        mechanic_username = str(request.form['mechanic_username'])
+        conn = pymysql.connect(
+            host='localhost',
+            user='root',
+            password='',
+            db='mobimechanic'
+        )
+        sql = 'SELECT * FROM user WHERE EXISTS (SELECT * FROM hire WHERE hire.user_username = user.username AND mechanic_username = %s)'
+        cursor = conn.cursor()
+        cursor.execute(sql,mechanic_username)
+        
+        if cursor.rowcount < 1:
+            return render_template('job.html', msg="You have no jobs, for now.")
+        else:
+            rows = cursor.fetchall()
+            return render_template('job.html', rows=rows, msg="You current jobs")
+    
+    else:
+        return redirect('/')
+        
 
 
 # run
