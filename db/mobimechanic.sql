@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="js/vendor/codemirror/lib/codemirror.css?v=5.1.3">
     <link rel="stylesheet" type="text/css" href="js/vendor/codemirror/addon/hint/show-hint.css?v=5.1.3">
     <link rel="stylesheet" type="text/css" href="js/vendor/codemirror/addon/lint/lint.css?v=5.1.3">
-    <link rel="stylesheet" type="text/css" href="./themes/pmahomme/css/theme.css?v=5.1.3&nocache=3960220066ltr&server=1">
+    <link rel="stylesheet" type="text/css" href="./themes/pmahomme/css/theme.css?v=5.1.3&nocache=2332447352ltr&server=1">
     <link rel="stylesheet" type="text/css" href="./themes/pmahomme/css/printview.css?v=5.1.3" media="print" id="printcss">
     <title>localhost / localhost | phpMyAdmin 5.1.3</title>
     <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery.min.js?v=5.1.3"></script>
@@ -260,7 +260,7 @@ $(function() {
       </div>
       <div id="pma_navigation_tree" class="list_container synced highlight autoexpand">
 
-  <div class="pma_quick_warp"><div class="drop_list"><button title="Recent tables" class="drop_button btn">Recent</button><ul id="pma_recent_list"><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=mobimechanic&table=user">`mobimechanic`.`user`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=mobimechanic&table=hire">`mobimechanic`.`hire`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=mobimechanic&table=mechanics">`mobimechanic`.`mechanics`</a></li></ul></div><div class="drop_list"><button title="Favorite tables" class="drop_button btn">Favorites</button><ul id="pma_favorite_list"><li class="warp_link">There are no favorite tables.</li></ul></div><div class="clearfloat"></div></div>
+  <div class="pma_quick_warp"><div class="drop_list"><button title="Recent tables" class="drop_button btn">Recent</button><ul id="pma_recent_list"><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=mobimechanic&table=mechanics">`mobimechanic`.`mechanics`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=mobimechanic&table=user">`mobimechanic`.`user`</a></li><li class="warp_link"><a href="index.php?route=/table/recent-favorite&db=mobimechanic&table=hire">`mobimechanic`.`hire`</a></li></ul></div><div class="drop_list"><button title="Favorite tables" class="drop_button btn">Favorites</button><ul id="pma_favorite_list"><li class="warp_link">There are no favorite tables.</li></ul></div><div class="clearfloat"></div></div>
 
 <div class="clearfloat"></div>
 
@@ -562,82 +562,6 @@ $.extend(defaultValues, {
                         Press Enter to execute query                    </span>
                 </div>
                                                             <div class="message history collapsed hide select"
-                            targetdb="mobimechanic" targettable="user">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>mobimechanic</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `user`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="mobimechanic" targettable="hire">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>mobimechanic</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `hire`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
                             targetdb="mobimechanic" targettable="mechanics">
                             <div class="action_content">
                     <span class="action collapse">
@@ -712,312 +636,464 @@ $.extend(defaultValues, {
                     </span>
             </div>
                             <span class="query">SELECT * FROM `mechanics`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="mobimechanic" targettable="hire">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>mobimechanic</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `hire`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="mobimechanic" targettable="hire">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>mobimechanic</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `hire`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="mobimechanic" targettable="user">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>mobimechanic</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `user`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="mobimechanic" targettable="hire">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>mobimechanic</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `hire`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="mobimechanic" targettable="user">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>mobimechanic</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `user`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="mobimechanic" targettable="user">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>mobimechanic</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `user`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="mobimechanic" targettable="hire">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>mobimechanic</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `hire`</span>
-                        </div>
-                                            <div class="message history collapsed hide select"
-                            targetdb="mobimechanic" targettable="user">
-                            <div class="action_content">
-                    <span class="action collapse">
-            Collapse
-                    </span>
-                            <span class="action expand">
-            Expand
-                    </span>
-                            <span class="action requery">
-            Requery
-                    </span>
-                            <span class="action edit">
-            Edit
-                    </span>
-                            <span class="action explain">
-            Explain
-                    </span>
-                            <span class="action profiling">
-            Profiling
-                    </span>
-                            <span class="action bookmark">
-            Bookmark
-                    </span>
-                            <span class="text failed">
-            Query failed
-                    </span>
-                            <span class="text targetdb">
-            Database
-                            : <span>mobimechanic</span>
-                    </span>
-                            <span class="text query_time">
-            Queried time
-                            : <span>During current session</span>
-                    </span>
-            </div>
-                            <span class="query">SELECT * FROM `user`</span>
                         </div>
                                             <div class="message history collapsed hide"
+                            targetdb="mobimechanic" targettable="mechanics">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">UPDATE `mechanics` SET `approve` = 1 WHERE `Id_no` = &#039;27251502&#039;;</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="mobimechanic" targettable="mechanics">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `mechanics`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="mobimechanic" targettable="mechanics">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `mechanics`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="mobimechanic" targettable="mechanics">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `mechanics`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="mobimechanic" targettable="mechanics">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `mechanics`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="mobimechanic" targettable="mechanics">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `mechanics`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="mobimechanic" targettable="hire">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `hire`</span>
+                        </div>
+                                            <div class="message history collapsed hide"
+                            targetdb="mobimechanic" targettable="hire">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">DELETE FROM `hire` WHERE 0;</span>
+                        </div>
+                                            <div class="message history collapsed hide"
+                            targetdb="mobimechanic" targettable="hire">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">DELETE FROM `hire` WHERE `user_username` = &#039;IainMosima&#039;;</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="mobimechanic" targettable="hire">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `hire`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="mobimechanic" targettable="hire">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `hire`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="mobimechanic" targettable="mechanics">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `mechanics`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
                             targetdb="mobimechanic" targettable="user">
                             <div class="action_content">
                     <span class="action collapse">
@@ -1053,7 +1129,387 @@ $.extend(defaultValues, {
                             : <span>During current session</span>
                     </span>
             </div>
-                            <span class="query">ALTER TABLE `user` DROP PRIMARY KEY, ADD PRIMARY KEY(`username`);</span>
+                            <span class="query">SELECT * FROM `user`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="mobimechanic" targettable="hire">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `hire`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="mobimechanic" targettable="mechanics">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `mechanics`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="mobimechanic" targettable="mechanics">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `mechanics`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="mobimechanic" targettable="hire">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `hire`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="mobimechanic" targettable="user">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `user`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="mobimechanic" targettable="mechanics">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `mechanics`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="mobimechanic" targettable="mechanics">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `mechanics`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="mobimechanic" targettable="mechanics">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `mechanics`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="mobimechanic" targettable="mechanics">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `mechanics`</span>
+                        </div>
+                                            <div class="message history collapsed hide select"
+                            targetdb="mobimechanic" targettable="mechanics">
+                            <div class="action_content">
+                    <span class="action collapse">
+            Collapse
+                    </span>
+                            <span class="action expand">
+            Expand
+                    </span>
+                            <span class="action requery">
+            Requery
+                    </span>
+                            <span class="action edit">
+            Edit
+                    </span>
+                            <span class="action explain">
+            Explain
+                    </span>
+                            <span class="action profiling">
+            Profiling
+                    </span>
+                            <span class="action bookmark">
+            Bookmark
+                    </span>
+                            <span class="text failed">
+            Query failed
+                    </span>
+                            <span class="text targetdb">
+            Database
+                            : <span>mobimechanic</span>
+                    </span>
+                            <span class="text query_time">
+            Queried time
+                            : <span>During current session</span>
+                    </span>
+            </div>
+                            <span class="query">SELECT * FROM `mechanics`</span>
                         </div>
                                                 </div><!-- console_message_container -->
             <div class="query_input">
