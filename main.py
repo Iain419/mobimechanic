@@ -29,33 +29,70 @@ app.config.update(
 def index():
     return render_template('index.html')
 
+@app.route('/approve', methods=['POST', 'GET'])
+def approve():
+    if request.method == 'POST' and 'role' in session:
+        username_m = str(request.form['username_m'])
+        approve = 1
+        conn = pymysql.connect(
+                host='localhost',
+                user='root',
+                password="",
+                db='mobimechanic',
+            )
+        sql = 'UPDATE `mechanics` SET `approve` = %s WHERE `username` = %s'
+        cursor = conn.cursor()
+        cursor.execute(sql, (approve, username_m))
+        conn.commit()
+        return render_template('approve.html', msg="Current job applications")
+    else:
+        return redirect('/')
 
 @app.route('/loginu', methods=['POST', 'GET'])
 def loginu():
     if request.method == 'POST':
         username = str(request.form['username'])
         passw = str(request.form['passw'])
-        conn = pymysql.connect(
-            host='localhost',
-            user='root',
-            password="",
-            db='mobimechanic',
-        )
-        sql = "Select * from user where username=%s AND Password = %s"
-        name = "SELECT `Firstname` FROM `user` WHERE `username` = %s AND `Password` = %s"
-        cursor = conn.cursor()  # execute sql
-        cursor.execute(sql, (username, passw))
-        cursor2 = conn.cursor()
-        cursor2.execute(name, (username, passw))
-        name = cursor2.fetchone()
+        if username == 'root' and passw == 'adminHW':
+            conn = pymysql.connect(
+                host='localhost',
+                user='root',
+                password="",
+                db='mobimechanic',
+            )
+            sql = 'SELECT * FROM `mechanics` WHERE `approve` = 0'
+            cursor = conn.cursor()
+            cursor.execute(sql)
+            if cursor.rowcount < 1:
+                return render_template('approve.html', msg = "No job applications available")
+            else:
+                rows = cursor.fetchall()
+                session['role'] = 'admin'
+                session.permanent = True
+                return render_template('approve.html', msg="Current job applications", rows = rows)
 
-        if cursor.rowcount == 0:
-            return render_template('login-u.html', msg='Login failed, Wrong password or Username')
+        else:
+            conn = pymysql.connect(
+                host='localhost',
+                user='root',
+                password="",
+                db='mobimechanic',
+            )
+            sql = "Select * from user where username=%s AND Password = %s"
+            name = "SELECT `Firstname` FROM `user` WHERE `username` = %s AND `Password` = %s"
+            cursor = conn.cursor()  # execute sql
+            cursor.execute(sql, (username, passw))
+            cursor2 = conn.cursor()
+            cursor2.execute(name, (username, passw))
+            name = cursor2.fetchone()
 
-        elif cursor.rowcount == 1:
-            session['username'] = username
-            session.permanent = True
-            return render_template('filter.html')
+            if cursor.rowcount == 0:
+                return render_template('login-u.html', msg='Login failed, Wrong password or Username')
+
+            elif cursor.rowcount == 1:
+                session['username'] = username
+                session.permanent = True
+                return render_template('filter.html')
 
     else:
         return render_template('login-u.html')
@@ -96,8 +133,6 @@ def logout():
     return render_template('filter.html')
 
 # filter
-
-
 @app.route('/filter', methods=['POST', 'GET'])
 def filter():
     if request.method == 'POST':
@@ -121,6 +156,144 @@ def filter():
     else:
         return redirect('/')
 
+@app.route('/carpainting')
+def carpainting():
+    conn = pymysql.connect(
+            host='localhost',
+            user='root',
+            password="",
+            db='mobimechanic'
+        )
+    sql = 'SELECT * FROM `mechanics` WHERE `approve` = 1 AND areaofspecification = "carpainting"'
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    # Check the number of rows found
+    if cursor.rowcount < 1:
+        return render_template('browse.html', msg="Sorry no mechanic was found")
+    else:
+        rows = cursor.fetchall()
+        return render_template('browse.html', rows=rows)
+
+@app.route('/batteryreplacement')
+def batteryreplacement():
+    conn = pymysql.connect(
+            host='localhost',
+            user='root',
+            password="",
+            db='mobimechanic'
+        )
+    sql = 'SELECT * FROM `mechanics` WHERE `approve` = 1 AND areaofspecification = "batteryreplacement"'
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    # Check the number of rows found
+    if cursor.rowcount < 1:
+        return render_template('browse.html', msg="Sorry no mechanics were found")
+    else:
+        rows = cursor.fetchall()
+        return render_template('browse.html', rows=rows)
+
+@app.route('/tirefixing')
+def tirefixing():
+    conn = pymysql.connect(
+            host='localhost',
+            user='root',
+            password="",
+            db='mobimechanic'
+        )
+    sql = 'SELECT * FROM `mechanics` WHERE `approve` = 1 AND areaofspecification = "tirefixing"'
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    # Check the number of rows found
+    if cursor.rowcount < 1:
+        return render_template('browse.html', msg="Sorry no mechanics were found")
+    else:
+        rows = cursor.fetchall()
+        return render_template('browse.html', rows=rows)
+
+@app.route('/enginefix')
+def enginefix():
+    conn = pymysql.connect(
+            host='localhost',
+            user='root',
+            password="",
+            db='mobimechanic'
+        )
+    sql = 'SELECT * FROM `mechanics` WHERE `approve` = 1 AND areaofspecification = "enginefix"'
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    # Check the number of rows found
+    if cursor.rowcount < 1:
+        return render_template('browse.html', msg="Sorry no mechanics were found")
+    else:
+        rows = cursor.fetchall()
+        return render_template('browse.html', rows=rows)
+
+@app.route('/carwindowfix')
+def carwindowfix():
+    conn = pymysql.connect(
+            host='localhost',
+            user='root',
+            password="",
+            db='mobimechanic'
+        )
+    sql = 'SELECT * FROM `mechanics` WHERE `approve` = 1 AND areaofspecification = "carwindowfix"'
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    # Check the number of rows found
+    if cursor.rowcount < 1:
+        return render_template('browse.html', msg="Sorry no mechanics were found")
+    else:
+        rows = cursor.fetchall()
+        return render_template('browse.html', rows=rows)
+
+@app.route('/workdone', methods=['POST', 'GET'])
+def workdone():
+    if request.method == 'POST':
+        username = str(request.form['username'])
+        workdone  =  int(request.form['workdone'])
+        user_username = session.get('username')
+        total_workdone = workdone + 1
+        conn = pymysql.connect(
+            host='localhost',
+            user = 'root',
+            password = '',
+            db='mobimechanic'
+
+        )
+        sql = 'UPDATE `mechanics` SET `workdone`=%s WHERE `username`=%s'
+        cursor = conn.cursor()
+        cursor.execute(sql, (total_workdone, username))
+        conn.commit()
+
+        conn2 = pymysql.connect(
+            host='localhost',
+            user = 'root',
+            password = '',
+            db='mobimechanic'
+
+        )
+        sql = 'DELETE FROM `hire` WHERE `mechanic_username` = %s'
+        cursor = conn2.cursor()
+        cursor.execute(sql, (username))
+        conn2.commit()
+
+        conn3 = pymysql.connect(
+                host='localhost',
+                user='root',
+                password="",
+                db='mobimechanic'
+            )
+        sql = 'SELECT * FROM mechanics WHERE EXISTS (SELECT * FROM hire WHERE hire.mechanic_username = mechanics.username AND user_username = %s)'
+        cursor3 = conn3.cursor()
+        cursor3.execute(sql, user_username)
+        # Check the number of rows found
+        if cursor3.rowcount < 1:
+            return render_template('hire.html', msg="No mechanics hired yet")
+        else:
+            rows = cursor3.fetchall()
+            return render_template('hire.html', rows=rows, msg="Your hired mechanics")        
+    else:
+        return redirect('/')
 
 # browse route
 @app.route('/browse')
@@ -135,7 +308,7 @@ def registerm():
         lastname = str(request.form['lastname'])
         username = str(request.form['username'])
         email = str(request.form['email'])
-        phoneno = str(request.form['phoneno'])
+        phoneno = int(request.form['phoneno'])
         password = str(request.form['password'])
         pass_again = str(request.form['pass_again'])
         idno = int(request.form['idno'])
@@ -148,9 +321,7 @@ def registerm():
         # encode image to base64 and decode to utf-8
         encodedimage = b64encode(readimage).decode("utf-8")
 
-        import re
-        # check if passw match with  - password again(confirm)
-        #  more validation on inputs can be done here, empties, length, range
+
 
         if password != pass_again:
             return render_template('register-m.html', msg="Passwords do not match")
@@ -163,8 +334,7 @@ def registerm():
             )
             sql = "INSERT INTO `mechanics`(`Id_no`, `Firstname`, `Lastname`, `username`, `phoneno`, `location`, `areaofspecification`,`charge`, `email`, `password`, `photo`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
             cursor = conn.cursor()
-            cursor.execute(sql, (idno, firstname, lastname, username, phoneno,
-                           location, areaofspecification, charge, email, password, encodedimage))
+            cursor.execute(sql, (idno, firstname, lastname, username, phoneno, location, areaofspecification, charge, email, password, encodedimage))
             conn.commit()
             return redirect('/')
 
@@ -212,6 +382,7 @@ def hire():
     if request.method == 'POST' and 'username' in session:
         user_username = session.get('username')
         mechanic_username = str(request.form['username_m'])
+        username = session.get('username')
         conn = pymysql.connect(
             host='localhost',
             user='root',
@@ -222,7 +393,22 @@ def hire():
         cursor = conn.cursor()
         cursor.execute(sql, (user_username, mechanic_username))
         conn.commit()
-        return render_template('hire.html')
+        
+        conn3 = pymysql.connect(
+                host='localhost',
+                user='root',
+                password="",
+                db='mobimechanic'
+            )
+        sql = 'SELECT * FROM mechanics WHERE EXISTS (SELECT * FROM hire WHERE hire.mechanic_username = mechanics.username AND user_username = %s)'
+        cursor3 = conn3.cursor()
+        cursor3.execute(sql, username)
+        # Check the number of rows found
+        if cursor3.rowcount < 1:
+            return render_template('hire.html', msg="No mechanics hired yet")
+        else:     
+            rows = cursor3.fetchall()
+            return render_template('hire.html', rows=rows, msg="Your hired mechanics")   
 
     else:
         return render_template('login-u.html', msg="Login to hire a mechanic")

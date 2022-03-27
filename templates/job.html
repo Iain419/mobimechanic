@@ -19,22 +19,24 @@
             <div class="col-4"></div>
         <br><br><br>
         </section>
-        {% for row in rows %}
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <form action="/hire" method="POST">
-                                <p class="card-infor"><b>Name: </b>{{row[0]}} {{row[1]}}</p> <!--fetching the names-->
-                                <p class="card-infor"><b>Phone number: </b>0{{row[3]}}</p> <!--fetching the phonenumber-->
-                                <p class="card-infor"><b>email: </b> {{row[4]}}</p> <!--fetching the email address-->
-                            </form>
-                            
-                        </div>
+        <section class="row">
+            {% for row in rows %}
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <form action="/hire" method="POST">
+                            <p class="card-infor"><b>Name: </b>{{row[0]}} {{row[1]}}</p> <!--fetching the names-->
+                            <p class="card-infor"><b>Phone number: </b>0{{row[3]}}</p> <!--fetching the phonenumber-->
+                            <p class="card-infor"><b>email: </b> {{row[4]}}</p> <!--fetching the email address-->
+                        </form>
+                        
                     </div>
+                </div>                    
+            </div>
+            {% endfor %}
+        </section>
 
-
-
-                    
-                {% endfor %}
+        
         {% include 'footer.html'%}
     </div>
 </body>

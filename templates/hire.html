@@ -20,33 +20,32 @@
         </section>
         <br>
         <section class="row">
-            <div class="col-4">
+            <section class="row">
                 {% for row in rows %}
-                    <div class="card" style="width: 18rem;">
-                        <img src="data:;base64,{{row[11].decode('utf-8')}}" class="img-fluid card-image"/> <!-- Fetching the image -->
-                        <div class="card-body">
-                            <form action="/hire" method="POST">
-                                <p class="card-infor"><b>Name :</b>{{row[1]}} {{row[2]}}</p> <!--fetching the names-->
-                                <div class="row" style="display: none">
-                                    <div class="col"><p class="card-infor"><b>Username: </b></p></div>
-                                    <div class="col"><input type="text" readonly class="form-control-plaintext" id="username" value="{{row[3]}}" name="username_m"></div>
-                                </div>
-                                <p class="card-infor"><b>Phone number: </b>0{{row[4]}}</p> <!--fetching the phonenumber-->
-                                <p class="card-infor"><b>Location: </b> {{row[5]}}</p> <!--fetching the location-->
-                                <p class="card-infor"><b>Services: </b> {{row[6]}}</p> <!--fetching the services-->
-                                <p class="card-infor"><b>Ratings</b> {{row[12]}} / 10</p> <!--fetching the ratings-->
-                                <p class="card-infor"><b>Charges: </b>Ksh: {{row[7]}} per hour</p> <!--fetching the charges--> 
-                                <button class="contact" type="submit">Hire</button>
-                            </form>
-                            
-                        </div>
+                <div class="col-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="data:;base64,{{row[11].decode('utf-8')}}" class="img-fluid card-image"/> <!-- Fetching the image -->
+                            <div class="card-body">
+                                <form action="/workdone" method="POST">
+                                    <p class="card-infor"><b>Name :</b>{{row[1]}} {{row[2]}}</p> <!--fetching the names-->
+                                    <div class="row" style="display: none">
+                                        <div class="col"><p class="card-infor"><b>Username: </b></p></div>
+                                        <div class="col"><input type="text" readonly class="form-control-plaintext" id="username" value="{{row[3]}}" name="username"></div>
+                                        <div class="col"><input type="text" readonly class="form-control-plaintext" id="workdone" value="{{row[12]}}" name="workdone"></div>
+                                    </div>
+                                    <p class="card-infor"><b>Phone number: </b>0{{row[4]}}</p> <!--fetching the phonenumber-->
+                                    <p class="card-infor"><b>Location: </b> {{row[5]}}</p> <!--fetching the location-->
+                                    <p class="card-infor"><b>Services: </b> {{row[6]}}</p> <!--fetching the services-->
+                                    <p class="card-infor"><b>Work done: </b> {{row[12]}}</p> <!--fetching the ratings-->
+                                    <p class="card-infor"><b>Charges: </b>Ksh: {{row[7]}} per hour</p> <!--fetching the charges--> 
+                                    <button class="contact" type="submit">Mark Done</button>
+                                </form>
+                                
+                            </div>
+                        </div>                    
                     </div>
-
-
-
-                    
-                {% endfor %}
-            </div>
+                    {% endfor %}
+            </section>
         </section>
         {% include 'footer.html' %}
     </div>

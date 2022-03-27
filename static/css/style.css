@@ -4,6 +4,9 @@
     padding: 0;
     font-family: sans-serif;
 }
+body{
+    overflow-x: hidden;
+}
 .container{
     width: 100%;
     padding-left: 8%;
@@ -79,6 +82,9 @@ nav ul li a:hover{
     box-shadow: 10px 7px 9px -1px rgba(0,0,0,0.75);
     -webkit-box-shadow: 10px 7px 9px -1px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 7px 9px -1px rgba(0,0,0,0.75);
+}
+.card img{
+    height: 30vh;
 }
 .card:hover{
     transform: scale(1.1);

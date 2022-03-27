@@ -19,7 +19,11 @@
                 <li><a href="/browse">Filter</a></li>
                 <li>
                     <div class="account">
-                        {% if session.username %}
+                        {% if session.role %}
+                        <a href="#">
+                            {{session.role}}
+                        </a>
+                        {% elif session.username %}
                         <a href="#">
                             {{session.username}}
                         </a>
